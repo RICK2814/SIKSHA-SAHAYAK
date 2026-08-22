@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Taking {{ quiz.title }} - Siksha Sahayak{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <form method="post" id="quizForm">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold mb-0">{{ quiz.title }}</h4>
+                    <span class="badge bg-dark"><i class="bi bi-clock me-1"></i><span id="timer">{{ quiz.time_limit }}:00</span></span>
+                </div>
+                {% for qq in quiz_questions %}
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-3"><span class="badge bg-primary me-2">{{ forloop.counter }}</span>{{ qq.question.question_text }}</h6>
+                        <div class="list-group">
+                            <label class="list-group-item d-flex align-items-center">
+                                <input class="form-check-input me-3" type="radio" name="question_{{ qq.question.id }}" value="A" required>
+                                <span>{{ qq.question.option_a }}</span>
+                            </label>
+                            <label class="list-group-item d-flex align-items-center">
+                                <input class="form-check-input me-3" type="radio" name="question_{{ qq.question.id }}" value="B">
+                                <span>{{ qq.question.option_b }}</span>
+                            </label>
+                            <label class="list-group-item d-flex align-items-center">
+                                <input class="form-check-input me-3" type="radio" name="question_{{ qq.question.id }}" value="C">
+                                <span>{{ qq.question.option_c }}</span>
+                            </label>
+                            <label class="list-group-item d-flex align-items-center">
+                                <input class="form-check-input me-3" type="radio" name="question_{{ qq.question.id }}" value="D">
+                                <span>{{ qq.question.option_d }}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="d-grid mb-5">
+                    <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-check-circle me-2"></i>Submit Quiz</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    let timeLimit = {{ quiz.time_limit }} * 60;
+    const timerDisplay = document.getElementById('timer');
+    const quizForm = document.getElementById('quizForm');
+
+    const timer = setInterval(() => {
+        timeLimit--;
+        const minutes = Math.floor(timeLimit / 60);
+        const seconds = timeLimit % 60;
+        timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        if (timeLimit <= 0) {
+            clearInterval(timer);
+            quizForm.submit();
+        }
+    }, 1000);
+</script>
+{% endblock %}

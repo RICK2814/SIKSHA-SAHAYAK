@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Quiz Result - Siksha Sahayak{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow text-center">
+                <div class="card-header bg-white py-4">
+                    <h4 class="fw-bold text-primary">{{ attempt.quiz.title }}</h4>
+                    <p class="text-muted mb-0">Quiz Result</p>
+                </div>
+                <div class="card-body p-5">
+                    <div class="display-1 fw-bold mb-2 {% if attempt.percentage >= 80 %}text-success{% elif attempt.percentage >= 50 %}text-warning{% else %}text-danger{% endif %}">
+                        {{ attempt.percentage }}%
+                    </div>
+                    <p class="lead mb-4">Score: <strong>{{ attempt.score }}</strong> / {{ attempt.quiz.total_marks }}</p>
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-4">
+                            <div class="p-3 bg-success bg-opacity-10 rounded">
+                                <div class="fw-bold text-success">{{ attempt.score }}</div>
+                                <small class="text-muted">Correct</small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-3 bg-danger bg-opacity-10 rounded">
+                                <div class="fw-bold text-danger">{{ attempt.total_questions|add:"-"|add:attempt.score }}</div>
+                                <small class="text-muted">Wrong</small>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'quiz_list' %}" class="btn btn-primary btn-lg"><i class="bi bi-arrow-left me-2"></i>Back to Quizzes</a>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-header bg-white py-3">
+                    <h6 class="fw-bold mb-0">Answer Review</h6>
+                </div>
+                <div class="card-body p-0">
+                    <div class="accordion" id="reviewAccordion">
+                        {% for answer in answers %}
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %} {% if answer.is_correct %}text-success{% else %}text-danger{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}">
+                                    <i class="bi bi-{% if answer.is_correct %}check-circle-fill{% else %}x-circle-fill{% endif %} me-2"></i>
+                                    Q{{ forloop.counter }}. {{ answer.question.question_text|truncatechars:60 }}
+                                </button>
+                            </h2>
+                            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#reviewAccordion">
+                                <div class="accordion-body">
+                                    <p><strong>Your Answer:</strong> {{ answer.selected_answer }}</p>
+                                    <p><strong>Correct Answer:</strong> {{ answer.question.correct_answer }}</p>
+                                    {% if answer.question.explanation %}
+                                    <div class="alert alert-light border small">
+                                        <strong>Explanation:</strong> {{ answer.question.explanation }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

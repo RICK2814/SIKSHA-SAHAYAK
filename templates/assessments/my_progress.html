@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}My Progress - Siksha Sahayak{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h3 class="fw-bold mb-4"><i class="bi bi-graph-up me-2 text-primary"></i>My Learning Progress</h3>
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                    <h2 class="fw-bold text-primary">{{ completed_quizzes }}</h2>
+                    <p class="text-muted mb-0">Quizzes Attempted</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                    <h2 class="fw-bold text-success">{{ avg_score }}%</h2>
+                    <p class="text-muted mb-0">Average Score</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                    <h2 class="fw-bold text-info">{{ highest_score.percentage|default:"0" }}%</h2>
+                    <p class="text-muted mb-0">Highest Score</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                    <h2 class="fw-bold text-warning">{{ total_questions }}</h2>
+                    <p class="text-muted mb-0">Questions Practiced</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                    <h2 class="fw-bold text-success">{{ correct_answers }}</h2>
+                    <p class="text-muted mb-0">Correct Answers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                    <h2 class="fw-bold text-secondary">{{ accuracy }}%</h2>
+                    <p class="text-muted mb-0">Practice Accuracy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white py-3">
+            <h5 class="fw-bold mb-0"><i class="bi bi-clock-history me-2"></i>Recent Quiz Attempts</h5>
+        </div>
+        <div class="card-body p-0">
+            {% if recent_attempts %}
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Quiz</th>
+                            <th>Subject</th>
+                            <th>Score</th>
+                            <th>Percentage</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for attempt in recent_attempts %}
+                        <tr>
+                            <td>{{ attempt.quiz.title }}</td>
+                            <td>{{ attempt.quiz.chapter.subject.name }}</td>
+                            <td>{{ attempt.score }}/{{ attempt.quiz.total_marks }}</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="progress flex-grow-1 me-2" style="height: 6px; width: 60px;">
+                                        <div class="progress-bar bg-{% if attempt.percentage >= 80 %}success{% elif attempt.percentage >= 50 %}warning{% else %}danger{% endif %}" style="width: {{ attempt.percentage }}%"></div>
+                                    </div>
+                                    <span class="small">{{ attempt.percentage }}%</span>
+                                </div>
+                            </td>
+                            <td>{{ attempt.completed_at|date:"M d, Y" }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="text-center py-5 text-muted">
+                <p>No quiz attempts yet. <a href="{% url 'quiz_list' %}">Take a quiz now!</a></p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

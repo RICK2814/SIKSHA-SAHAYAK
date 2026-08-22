@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}{{ material.title }} - Siksha Sahayak{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'class_list' %}">Classes</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'subject_list' material.chapter.subject.class_level.id %}">{{ material.chapter.subject.class_level.name }}</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'chapter_list' material.chapter.subject.id %}">{{ material.chapter.subject.name }}</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'study_material_list' material.chapter.id %}">{{ material.chapter.title }}</a></li>
+            <li class="breadcrumb-item active">{{ material.title }}</li>
+        </ol>
+    </nav>
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white py-3 border-bottom">
+            <h4 class="fw-bold mb-0 text-primary">{{ material.title }}</h4>
+            <small class="text-muted">{{ material.chapter.subject.name }} | {{ material.chapter.title }}</small>
+        </div>
+        <div class="card-body p-4">
+            {% if material.description %}
+            <div class="alert alert-light border mb-4">
+                <strong>Description:</strong> {{ material.description }}
+            </div>
+            {% endif %}
+            <div class="study-content">
+                {{ material.content|linebreaks }}
+            </div>
+            {% if material.file %}
+            <div class="mt-4 pt-3 border-top">
+                <a href="{{ material.file.url }}" class="btn btn-outline-danger" target="_blank"><i class="bi bi-file-earmark-pdf me-2"></i>Download PDF</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

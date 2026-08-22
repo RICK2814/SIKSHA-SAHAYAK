@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}Welcome - Siksha Sahayak{% endblock %}
+{% block content %}
+<div class="hero-section">
+    <div class="container py-5">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold text-primary mb-3">Learn. Practice. Grow.</h1>
+                <p class="lead text-muted mb-4">Siksha Sahayak is your friendly learning companion! Study materials, practice questions, and fun quizzes — all in one place.</p>
+                <div class="d-flex gap-3">
+                    <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-4"><i class="bi bi-rocket-takeoff me-2"></i>Get Started</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-primary btn-lg px-4"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-illustration">
+                    <i class="bi bi-book-half" style="font-size: 12rem; color: #0d6efd; opacity: 0.2;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm feature-card">
+                <div class="card-body text-center p-4">
+                    <div class="feature-icon bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                        <i class="bi bi-journal-text" style="font-size: 2rem;"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Study Materials</h5>
+                    <p class="card-text text-muted">Access chapter-wise study materials, notes, and resources for your class.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm feature-card">
+                <div class="card-body text-center p-4">
+                    <div class="feature-icon bg-success bg-opacity-10 text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                        <i class="bi bi-pencil-square" style="font-size: 2rem;"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Practice Questions</h5>
+                    <p class="card-text text-muted">Practice with multiple-choice questions and get instant feedback with explanations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm feature-card">
+                <div class="card-body text-center p-4">
+                    <div class="feature-icon bg-warning bg-opacity-10 text-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                        <i class="bi bi-trophy" style="font-size: 2rem;"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Take Quizzes</h5>
+                    <p class="card-text text-muted">Test your knowledge with timed quizzes and track your scores and progress.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

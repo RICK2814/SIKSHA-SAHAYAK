@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}{{ class_level.name }} Subjects - Siksha Sahayak{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'class_list' %}">Classes</a></li>
+            <li class="breadcrumb-item active">{{ class_level.name }}</li>
+        </ol>
+    </nav>
+    <h3 class="fw-bold mb-4"><i class="bi bi-books me-2 text-primary"></i>{{ class_level.name }} Subjects</h3>
+    <div class="row g-4">
+        {% for subject in subjects %}
+        <div class="col-md-4 col-lg-3">
+            <a href="{% url 'chapter_list' subject.id %}" class="text-decoration-none">
+                <div class="card border-0 shadow-sm h-100 subject-card">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-success bg-opacity-10 text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                            <i class="bi bi-book" style="font-size: 1.8rem;"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark">{{ subject.name }}</h5>
+                        <p class="text-muted small mb-0">{{ subject.chapters.count }} Chapters</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center text-muted py-5">
+            <p>No subjects available for this class.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

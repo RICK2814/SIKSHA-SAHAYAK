@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}{{ chapter.title }} Materials - Siksha Sahayak{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'class_list' %}">Classes</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'subject_list' chapter.subject.class_level.id %}">{{ chapter.subject.class_level.name }}</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'chapter_list' chapter.subject.id %}">{{ chapter.subject.name }}</a></li>
+            <li class="breadcrumb-item active">{{ chapter.title }}</li>
+        </ol>
+    </nav>
+    <h3 class="fw-bold mb-4"><i class="bi bi-journal-text me-2 text-primary"></i>Study Materials</h3>
+    <div class="row g-4">
+        {% for material in materials %}
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-primary">{{ material.title }}</h5>
+                    <p class="text-muted small">{{ material.description|truncatechars:150|default:"Read the full material to learn more about this topic." }}</p>
+                    <a href="{% url 'study_material_detail' material.id %}" class="btn btn-outline-primary btn-sm"><i class="bi bi-eye me-1"></i>Read Topic</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center text-muted py-5">
+            <p>No study materials available for this chapter.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
