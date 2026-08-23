@@ -2,9 +2,14 @@
 
 > A Django-based learning and assessment platform designed to bring curriculum, study materials, practice, assessments, and learner accounts together in one place.
 
+**🔴 Live demo:** [https://siksha-sahayak-zj9u.onrender.com](https://siksha-sahayak-zj9u.onrender.com)
+
+> Hosted on Render's free tier — the app may take 30–60 seconds to wake up on the first request after a period of inactivity. Currently running on SQLite, so data may reset between deploys.
+
 [![Django](https://img.shields.io/badge/Django-Framework-092E20?logo=django&logoColor=white)](https://www.djangoproject.com/)
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20App-00C6FF?style=flat-square)](https://siksha-sahayak-zj9u.onrender.com)
 
 ## ✨ Overview
 
