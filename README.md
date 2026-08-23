@@ -25,56 +25,24 @@
 
 The project is organized to support a complete learning flow:
 
-```text
-Learner
-   ↓
-Account / Profile
-   ↓
-Curriculum & Study Materials
-   ↓
-Practice / Learning Activities
-   ↓
-Assessments
-   ↓
-Progress & Results
-```
+<div align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/learning-flow.svg?v=1" width="100%" alt="Animated learning flow pipeline"/></div>
 
 ## 🚀 Core Features
 
-- 👤 User account and authentication flow
-- 📚 Curriculum and subject/material management
-- 🧠 Practice and learning activities
-- 📝 Assessment and quiz functionality
-- 📊 Learner-focused assessment views and results
-- 🗂️ Django management commands for curriculum/data seeding
-- 🎨 Template-based web interface
-- 🧩 Modular Django app structure for future expansion
+<div align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/features.svg?v=1" width="100%" alt="Animated core feature matrix"/></div>
 
 ## 🧱 Project Structure
 
-```text
-SIKSHA-SAHAYAK/
-├── accounts/                 # User accounts and authentication
-├── assessments/             # Assessments, quizzes and related logic
-├── materials/               # Curriculum, study materials and content
-├── templates/                # Web templates and UI pages
-├── manage.py                 # Django management entry point
-├── requirements.txt          # Python dependencies
-└── README.md                 # Project documentation
-```
+<div align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/project-structure.svg?v=1" width="100%" alt="Animated project structure scan"/></div>
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Backend | Django / Python |
-| Database | Django ORM compatible database |
-| Frontend | HTML, CSS, JavaScript, Django Templates |
-| Application Modules | `accounts`, `materials`, `assessments` |
-| Data Management | Django management commands |
-| Version Control | Git + GitHub |
+<div align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/tech-radar.svg?v=1" width="100%" alt="Animated technology radar"/></div>
 
 ## ⚙️ Local Setup
+
+<div align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/local-setup.svg?v=1" width="100%" alt="Animated local setup terminal"/></div>
+
 
 ### 1. Clone the repository
 
