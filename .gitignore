@@ -1,8 +1,0 @@
-.venv/
-__pycache__/
-*.py[cod]
-db.sqlite3
-media/*
-!media/.gitkeep
-.env
-*.log
