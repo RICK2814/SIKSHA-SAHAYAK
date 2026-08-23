@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}{{ subject.name }} Chapters - Siksha Sahayak{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'class_list' %}">Classes</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'subject_list' subject.class_level.id %}">{{ subject.class_level.name }}</a></li>
+            <li class="breadcrumb-item active">{{ subject.name }}</li>
+        </ol>
+    </nav>
+    <h3 class="fw-bold mb-4"><i class="bi bi-list-ol me-2 text-primary"></i>{{ subject.name }} - Chapters</h3>
+    <div class="row g-4">
+        {% for chapter in chapters %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="badge bg-primary rounded-pill me-2">Ch {{ forloop.counter }}</span>
+                        <h6 class="fw-bold mb-0">{{ chapter.title }}</h6>
+                    </div>
+                    <p class="text-muted small">{{ chapter.description|truncatechars:100|default:"No description available." }}</p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="{% url 'study_material_list' chapter.id %}" class="btn btn-primary btn-sm flex-fill"><i class="bi bi-book-half me-1"></i>Study</a>
+                        <a href="{% url 'practice_chapter' chapter.id %}" class="btn btn-success btn-sm flex-fill"><i class="bi bi-pencil me-1"></i>Practice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center text-muted py-5">
+            <p>No chapters available for this subject.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}{{ quiz.title }} - Siksha Sahayak{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow">
+                <div class="card-header bg-primary text-white py-3">
+                    <h4 class="mb-0"><i class="bi bi-clipboard-check me-2"></i>{{ quiz.title }}</h4>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Subject:</strong> {{ quiz.chapter.subject.name }}</p>
+                            <p class="mb-1"><strong>Chapter:</strong> {{ quiz.chapter.title }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Time Limit:</strong> {{ quiz.time_limit }} minutes</p>
+                            <p class="mb-1"><strong>Total Marks:</strong> {{ quiz.total_marks }}</p>
+                        </div>
+                    </div>
+                    <h6 class="fw-bold mb-3">Questions ({{ questions.count }}):</h6>
+                    <ul class="list-group list-group-flush mb-4">
+                        {% for qq in questions %}
+                        <li class="list-group-item px-0">{{ forloop.counter }}. {{ qq.question.question_text|truncatechars:80 }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="d-grid">
+                        <a href="{% url 'take_quiz' quiz.id %}" class="btn btn-primary btn-lg"><i class="bi bi-play-circle me-2"></i>Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+
+            {% if attempts %}
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-header bg-white py-3">
+                    <h6 class="fw-bold mb-0"><i class="bi bi-clock-history me-2"></i>Previous Attempts</h6>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Score</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for attempt in attempts %}
+                            <tr>
+                                <td>{{ attempt.completed_at|default:attempt.started_at|date:"M d, Y H:i" }}</td>
+                                <td>{{ attempt.score }}/{{ attempt.total_questions }}</td>
+                                <td>
+                                    <span class="badge bg-{% if attempt.percentage >= 80 %}success{% elif attempt.percentage >= 50 %}warning{% else %}danger{% endif %}">
+                                        {{ attempt.percentage }}%
+                                    </span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
