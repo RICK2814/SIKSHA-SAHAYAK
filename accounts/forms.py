@@ -13,7 +13,9 @@ class StudentRegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2', 'class_level']
-        widgets = {'username': forms.TextInput(attrs={'class': 'form-control'})}
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
