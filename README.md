@@ -11,6 +11,14 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20App-00C6FF?style=flat-square)](https://siksha-sahayak-zj9u.onrender.com)
 
+<div align="center">
+
+<a href="https://siksha-sahayak-zj9u.onrender.com"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=1" width="100%" alt="Animated robotic system core with live diagnostic console"/></a>
+
+</div>
+
+
+
 ## ✨ Overview
 
 **Siksha Sahayak** is a web application for structured digital learning. It combines learner accounts, educational materials, curriculum data, practice content, and assessments inside a Django project.
