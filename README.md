@@ -1,16 +1,12 @@
-# 🎓 SIKSHA SAHAYAK
+# 🤖 SIKSHA SAHAYAK
 
 > A futuristic Django-based learning and assessment platform that brings curriculum, study materials, practice, assessments, accounts, and learner progress into one intelligent learning ecosystem.
 
 <p align="center">
-  <a href="https://siksha-sahayak-zj9u.onrender.com">
-    <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Live animated robotic Siksha Sahayak system console" />
-  </a>
+  <a href="https://siksha-sahayak-zj9u.onrender.com"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Live animated robotic Siksha Sahayak system console" /></a>
 </p>
 
-<p align="center">
-  <a href="https://siksha-sahayak-zj9u.onrender.com"><strong>🚀 OPEN LIVE DEMO</strong></a>
-</p>
+<p align="center"><a href="https://siksha-sahayak-zj9u.onrender.com"><strong>🚀 OPEN LIVE DEMO</strong></a></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Django-4.2%2B-092E20?logo=django&logoColor=white" alt="Django" />
@@ -20,100 +16,58 @@
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT" />
 </p>
 
-> **Live deployment note:** hosted on Render's free tier. The service may need a short wake-up period after inactivity, and the current SQLite deployment is not intended as a durable production datastore.
-
----
-
 ## ✨ Overview
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic overview console" />
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic overview console" /></p>
 
-**Siksha Sahayak** is a structured digital-learning platform built with Django. It connects learner accounts, curriculum content, educational materials, practice flows, and assessments into a single application.
-
-The experience is designed around a clear learning loop:
-
-**Discover → Learn → Practice → Assess → Review → Improve**
-
----
+**Siksha Sahayak** is a web application for structured digital learning. It combines learner accounts, educational materials, curriculum data, practice content, assessments, and learner workflows inside a Django project.
 
 ## 🚀 Core Features
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic feature matrix" />
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic feature console" /></p>
 
-- 👤 **Learner Accounts** — registration, login, profiles, and authenticated workflows
-- 📚 **Curriculum & Materials** — class, subject, chapter, and study-content organization
-- 🧠 **Practice Experience** — question-based learning and revision workflows
-- 📝 **Assessments** — attempts, scoring, results, and learner-facing assessment flows
-- 🗂️ **Management Commands** — reusable data-seeding and curriculum-loading workflows
-- 🌐 **Deployment Ready** — Gunicorn, WhiteNoise, Render-compatible configuration
-
----
+- Learner registration and authentication
+- Curriculum and subject organization
+- Study materials and learning resources
+- Practice and question-bank workflows
+- Online assessments and scoring
+- Attempt/result tracking
+- Django management commands for curriculum and data seeding
+- Render-ready deployment configuration
 
 ## 🧱 Project Structure
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic architecture scan" />
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic project structure console" /></p>
 
 ```text
 SIKSHA-SAHAYAK/
-├── accounts/
-│   ├── models.py
-│   ├── forms.py
-│   ├── views.py
-│   └── urls.py
-│
-├── assessments/
-│   ├── models.py
-│   ├── views.py
-│   ├── urls.py
-│   └── management/
-│
-├── materials/
-│   ├── models.py
-│   ├── views.py
-│   ├── urls.py
-│   └── management/
-│
-├── assets/
-│   └── ai-core.svg
-│
+├── accounts/                 # User accounts and authentication
+├── assessments/              # Assessment models, views and workflows
+├── materials/                # Curriculum, materials and learning content
+├── assets/                   # Animated SVG visuals and project assets
 ├── manage.py
 ├── requirements.txt
 ├── build.sh
 └── README.md
 ```
 
----
-
 ## 🛠️ Tech Stack
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic technology radar" />
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic technology console" /></p>
 
 | Layer | Technology |
 |---|---|
 | Backend | Django 4.2+ |
 | Language | Python 3.x |
-| Database | SQLite / PostgreSQL-ready dependencies |
-| Static Assets | WhiteNoise |
-| Application Server | Gunicorn |
-| Media / Imaging | Pillow |
-| Deployment | Render |
-| Data Seeding | Django management commands |
-
----
+| Database | SQLite / PostgreSQL-ready |
+| Static Files | WhiteNoise |
+| Production Server | Gunicorn |
+| Hosting | Render |
+| Image Handling | Pillow |
 
 ## ⚙️ Local Setup
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic setup terminal" />
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic setup console" /></p>
 
 ### 1. Clone
 
@@ -128,13 +82,13 @@ cd SIKSHA-SAHAYAK
 python -m venv venv
 ```
 
-**Windows**
+Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-**macOS / Linux**
+macOS/Linux:
 
 ```bash
 source venv/bin/activate
@@ -152,118 +106,82 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-### 5. Load project data
+### 5. Seed data
 
-Use the available Django management commands under:
+Use the available management commands under `materials/management/commands/` and `assessments/management/commands/` according to the desired setup workflow.
 
-```text
-materials/management/commands/
-assessments/management/commands/
-```
-
-### 6. Start the server
+### 6. Run locally
 
 ```bash
 python manage.py runserver
 ```
 
-Then open:
+Open `http://127.0.0.1:8000/`.
 
-```text
-http://127.0.0.1:8000/
-```
+## 🔐 Configuration
 
----
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic configuration console" /></p>
 
-## 🔐 Configuration & Security
+Before production deployment, configure environment-specific values such as:
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic security monitor" />
-</div>
-
-Before production deployment, configure environment-specific values for:
-
-- `SECRET_KEY`
-- `DEBUG`
-- `ALLOWED_HOSTS`
-- Database connection
+- Django secret key
+- Debug mode
+- Allowed hosts
+- Database credentials
 - Static/media storage
 - Production security settings
 
-Never commit passwords, API keys, private tokens, or deployment credentials to GitHub.
-
----
+Never commit passwords, API keys, secret keys, or production credentials.
 
 ## 🧩 Application Modules
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic module network" />
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic application module console" /></p>
 
 ### `accounts`
 
-User and learner account workflows including models, forms, URLs, views, and authentication-related functionality.
+Learner/user account functionality, including models, forms, URLs, views, registration, login, and profile-related workflows.
 
 ### `materials`
 
-Curriculum and educational-material workflows, including models, views, routes, and management commands used to populate learning content.
+Curriculum and educational-material functionality, including learning content and data-seeding commands.
 
 ### `assessments`
 
-Assessment models, views, routing, management commands, learner attempts, scoring, and result flows.
-
----
+Assessment models, routes, views, question flows, attempts, scoring, and results.
 
 ## 📈 Future Scope
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic evolution engine" />
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic future roadmap console" /></p>
 
-- 🤖 Personalized learning recommendations
-- 📊 Learning analytics and progress dashboards
-- 🔥 Progress streaks and learner motivation systems
-- 🧪 More interactive question and assessment types
-- 🧠 AI-assisted study support
-- 👨‍🏫 Role-based student, teacher, and administrator dashboards
-- 📱 REST API support for mobile or external clients
-- ☁️ Production-grade monitoring and deployment automation
-
----
+- Personalized learning recommendations
+- Learning analytics and progress dashboards
+- Progress tracking and streaks
+- More interactive question types
+- AI-assisted study support
+- Role-based student, teacher, and administrator dashboards
+- REST API for mobile/front-end clients
+- Production-grade monitoring and deployment automation
 
 ## 🤝 Contributing
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic collaboration console" />
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic contribution console" /></p>
 
 1. Fork the repository.
 2. Create a feature branch.
-3. Implement your changes.
+3. Make your changes.
 4. Test the application locally.
 5. Commit with a clear message.
 6. Open a pull request.
 
----
-
 ## 📄 License
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=2" width="100%" alt="Animated robotic open source core" />
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic license console" /></p>
 
-This project is intended to be distributed under the **MIT License**.
-
----
+This project is distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ## 🔗 Links
 
-<div align="center">
-  <a href="https://siksha-sahayak-zj9u.onrender.com"><strong>🌐 LIVE APPLICATION</strong></a>
-  &nbsp; • &nbsp;
-  <a href="https://github.com/RICK2814/SIKSHA-SAHAYAK"><strong>💻 GITHUB REPOSITORY</strong></a>
-</div>
+<p align="center"><img src="https://raw.githubusercontent.com/RICK2814/SIKSHA-SAHAYAK/main/assets/ai-core.svg?v=3" width="100%" alt="Animated robotic links console" /></p>
 
-<p align="center">
-  <sub>🤖 Every major README section is powered by the same live animated robotic console for a consistent futuristic visual system.</sub>
-</p>
+- **Live Demo:** https://siksha-sahayak-zj9u.onrender.com
+- **GitHub:** https://github.com/RICK2814/SIKSHA-SAHAYAK
